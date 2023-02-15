@@ -61,7 +61,8 @@ header {
 .menu-items,
 .hero-section,
 .feature,
-.productivity-section {
+.productivity-section,
+.reviewer-info {
     display: flex;
 }
 
@@ -70,11 +71,11 @@ header {
     align-items: center;
     margin: 0 5em;
     padding: 2em 0;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .logo {
-    min-width: 7rem;
+    width: min(15rem, 100%);
 }
 
 .logo img {
@@ -163,6 +164,7 @@ header {
     padding: 1em 4em;
     border-radius: 2em;
     cursor: pointer;
+    color: var(--neutral)
 }
 
 .btn:hover {
@@ -212,7 +214,7 @@ main {
 .productivity-section {
     align-items: center;
     justify-content: space-around;
-    margin: 5em 5em 0;
+    margin: 13em 5em;
     flex-wrap: wrap;
 }
 
@@ -263,6 +265,67 @@ main {
     transform: translateX(100%);
 }
 
+.reviews-section {
+    margin: 10em 0 0;
+    padding: 5em 0;
+    position: relative;
+}
+
+.reviews-section>img {
+    position: absolute;
+    top: 6%;
+    left: 3%;
+}
+
+.review-container {
+    margin: 0 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 4em;
+}
+
+.review {
+    background-color: var(--primary-color-100);
+    border-radius: 0.6em;
+    position: relative;
+    z-index: 3;
+}
+
+.review>p {
+    font-size: var(--font-size);
+    padding: 1.5em;
+}
+
+.reviewer-info {
+    align-items: center;
+    padding: 1.5em;
+}
+
+.review-img {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.review-img img {
+    width: 100%;
+}
+
+.name-title {
+    margin: 1em;
+}
+
+.name {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    margin: 0.2em 0;
+}
+
 @media only screen and (max-width: 1000px) {
     .features-section {
         width: 90%;
@@ -277,6 +340,21 @@ main {
     }
 
     .productivity-section {
+        margin: 8em 1em;
+    }
+
+    .reviews-section>img {
+        top: 2%;
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .navigation {
+        margin: 0;
+    }
+
+    .review-container {
         margin: 0 1em;
     }
 }
