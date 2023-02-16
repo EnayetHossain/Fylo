@@ -47,6 +47,10 @@ a {
     font-size: var(--font-size);
 }
 
+ul {
+    list-style-type: none;
+}
+
 .desktop-max {
     max-width: 1440px;
     margin: 0 auto;
@@ -62,7 +66,8 @@ header {
 .hero-section,
 .feature,
 .productivity-section,
-.reviewer-info {
+.reviewer-info,
+.footer-info {
     display: flex;
 }
 
@@ -83,7 +88,6 @@ header {
 }
 
 .menu-items {
-    list-style-type: none;
     flex-wrap: wrap;
     margin: 1em 0;
 }
@@ -267,13 +271,13 @@ main {
 
 .reviews-section {
     margin: 10em 0 0;
-    padding: 5em 0;
+    padding: 5em 0 24em;
     position: relative;
 }
 
 .reviews-section>img {
     position: absolute;
-    top: 6%;
+    top: 3%;
     left: 3%;
 }
 
@@ -326,9 +330,92 @@ main {
     margin: 0.2em 0;
 }
 
+footer {
+    background-color: var(--primary-color-300);
+    position: relative;
+}
+
+.subscribe-container {
+    background-color: var(--primary-color);
+    width: min(80rem, 90%);
+    margin: 0 auto;
+    text-align: center;
+    padding: 2em 4em;
+    border-radius: 0.8em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30%;
+}
+
+.subscribe-title {
+    font-size: clamp(2rem, 2.3vw, 4rem);
+}
+
+.subscribe-description {
+    font-size: var(--font-size);
+    margin: 1.2em 0;
+}
+
+input[type="email"] {
+    border: none;
+    padding: 1em 2em 1em;
+    width: min(38rem, 100%);
+    border-radius: 3em;
+    font-size: var(--font-size);
+    margin: 1em;
+}
+
+.subscribe-btn {
+    padding: 1em 2em;
+}
+
+.footer-info {
+    justify-content: space-between;
+    font-size: var(--font-size);
+    align-items: center;
+    margin: 0 5em;
+    padding: 10em 0 5em;
+}
+
+.fylo-description p {
+    width: 31rem;
+}
+
+.fylo-contact p,
+.footer-menu li {
+    margin: 1em 0;
+}
+
+.socials a i {
+    font-size: 1.8rem;
+    margin: 0 0.5em;
+}
+
+.footer-info>div,
+.footer-info ul {
+    margin: 1em 0;
+}
+
 @media only screen and (max-width: 1000px) {
     .features-section {
         width: 90%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .subscribe-container {
+        top: -18%;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: flex-start;
+        /* padding: 10em 0 5em; */
+    }
+
+    .fylo-description p {
+        width: 100%;
     }
 }
 
@@ -355,6 +442,20 @@ main {
     }
 
     .review-container {
+        margin: 0 1em;
+    }
+
+    .subscribe-container {
+        padding: 2em;
+        top: -22%;
+    }
+
+    input[type="email"] {
+        margin: 1em 0;
+        padding: 1em;
+    }
+
+    .footer-info {
         margin: 0 1em;
     }
 }
